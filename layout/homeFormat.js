@@ -3,12 +3,11 @@ import Section1 from '../components/section1';
 import Section2 from '../components/section2';
 import Section3 from '../components/section3';
 import Section4 from '../components/section4';
-import QueryStr from 'query-string';
-export default function Home({data}) {
+
+export default function HomeFormat({data}) {
   return (
     <>
- 
-    <Format blog={data}>
+    <Format>
         <Section1 blog={data}></Section1>
         <Section2 blog={data}></Section2>
         <Section3 blog={data}></Section3>
@@ -19,9 +18,8 @@ export default function Home({data}) {
 }
 
 
-export async function getServerSideProps(props){
-  var query=QueryStr.stringify(props.query);
-  const res = await fetch(`http://localhost:3000/api/getall?${query}`)
+export async function getServerSideProps(){
+  const res = await fetch("http://localhost:3000/api/getall")
   const data = await res.json()
 
   return{props:{data}}
