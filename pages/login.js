@@ -4,6 +4,8 @@ import Header from "../components/header";
 import { toast, Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Link from 'next/link'
+import {FcGoogle} from "react-icons/fc";
+import {BsGithub} from "react-icons/bs"
 
 const login = () => {
   const router = useRouter();
@@ -64,6 +66,13 @@ const login = () => {
                 value={loginData.password}
               />
             </div>
+            <div style={{textAlign:"center",marginTop:"10px"}}>Or Login With
+                <div style={{display:"flex",alignItems:"center",justifyContent:"center",}}> 
+                <FcGoogle style={{fontSize:"xx-large" ,marginTop:"10px",marginRight:"15px"}} onClick={()=>{signIn("google")}}></FcGoogle>
+                <BsGithub style={{fontSize:"xx-large" ,marginTop:"10px"}} onClick={()=>{signIn("github")}}></BsGithub>
+                </div>
+            </div>
+
             <div className="btnS">
               <button type="submit" className="btnSub">
                 Login

@@ -1,5 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
+import { FcGoogle } from "react-icons/fc";
+import { BsGithub } from "react-icons/bs";
+import { signIn } from "next-auth/react";
 
 const register = () => {
   const [registerData, setRegisterData] = useState({
@@ -17,7 +20,7 @@ const register = () => {
         ...registerData,
       });
 
-      res && alert("user has been registered")
+      res && alert("user has been registered");
     } catch (err) {
       console.log(err);
     }
@@ -61,6 +64,33 @@ const register = () => {
                 id="password"
                 value={registerData.password}
               />
+            </div>
+            <div style={{ textAlign: "center", marginTop: "10px" }}>
+              Or Sign Up With
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <FcGoogle
+                  style={{
+                    fontSize: "xx-large",
+                    marginTop: "10px",
+                    marginRight: "15px",
+                  }}
+                  onClick={() => {
+                    signIn("google");
+                  }}
+                ></FcGoogle>
+                <BsGithub
+                  style={{ fontSize: "xx-large", marginTop: "10px" }}
+                  onClick={() => {
+                    signIn("github");
+                  }}
+                ></BsGithub>
+              </div>
             </div>
             <div className="btnS">
               <button type="submit" className="btnSub">
