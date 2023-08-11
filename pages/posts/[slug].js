@@ -99,7 +99,7 @@ const page = ({ data }) => {
 export async function getServerSideProps({ params }) {
   const slug = params.slug;
   console.log(slug);
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(`https://blog-next-app-khaki.vercel.app/api/blog/${slug}`);
   const data = await res.json();
   return { props: { data } };
 }

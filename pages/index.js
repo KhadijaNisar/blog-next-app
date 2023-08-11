@@ -21,7 +21,7 @@ export default function Home({data}) {
 
 export async function getServerSideProps(props){
   var query=QueryStr.stringify(props.query);
-  const res = await fetch(`http://localhost:3000/api/getall?${query}`)
+  const res = await fetch(`https://blog-next-app-khaki.vercel.app/api/getall?${query}`)
   const data = await res.json()
 
   return{props:{data}}

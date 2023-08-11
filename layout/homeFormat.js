@@ -19,7 +19,7 @@ export default function HomeFormat({data}) {
 
 
 export async function getServerSideProps(){
-  const res = await fetch("http://localhost:3000/api/getall")
+  const res = await fetch("https://blog-next-app-khaki.vercel.app/api/getall")
   const data = await res.json()
 
   return{props:{data}}
