@@ -69,7 +69,7 @@ const header = ({blog}) => {
                 <Link href={"/form"} color="#888888">
                Write
              </Link>
-             <Link href={<Dashboard blog={blog}></Dashboard>} color="#888888">
+             <Link href={"/dashboard"} color="#888888">
                DB
              </Link>
             <div className="shrink w-80 sm:order-2">
